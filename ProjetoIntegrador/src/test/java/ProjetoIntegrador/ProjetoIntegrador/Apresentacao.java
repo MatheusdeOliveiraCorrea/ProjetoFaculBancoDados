@@ -2,6 +2,8 @@ package ProjetoIntegrador.ProjetoIntegrador;
 
 import java.util.LinkedList;
 
+import org.junit.Test;
+
 import dao.PacienteDAO;
 import model.Paciente;
 
@@ -13,6 +15,7 @@ public class Apresentacao {
 	 * classe PacienteDAO. Em seguida é usado um for each para percorrer todos os
 	 * elementos da lista e imprimir no console
 	 */	
+	
 	public void listarTodosPacientes() {
 
 		PacienteDAO dao = new PacienteDAO();
@@ -37,6 +40,7 @@ public class Apresentacao {
 	 * Lista todos os pacientes que estão cadastrados como true em vacinados
 	 */
 	
+	
 	public void listarTodosPacientesVacinados() {
 
 		PacienteDAO dao = new PacienteDAO();
@@ -60,16 +64,21 @@ public class Apresentacao {
 	public void buscar() {
 		
 		PacienteDAO dao = new PacienteDAO();
-		dao.consultar("cpf"); //inserir cpf válido
+		dao.consultar("25052525488"); //inserir cpf válido
 		
 	}
 	
+	@Test
 	public void update() {
 		
 		PacienteDAO dao = new PacienteDAO();
-		dao.updateUf("SC", "74125898547");  
-		dao.updateNome("nome", "cpf");
-		dao.updateVacinado(false, "cpf");
+		 
+		dao.updateUf("GO", "25052525488");
+		
+		/*
+		dao.updateNome(null, null);
+		dao.updateUf(null, null);
+		dao.updateVacinado(false, null);*/
 		
 	}
 	
