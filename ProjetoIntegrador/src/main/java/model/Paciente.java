@@ -2,6 +2,13 @@ package model;
 
 public class Paciente {
 	
+	/*
+	 * Define a estrutura da tabela "Paciente" do banco de dados.
+	 * Ou seja, permite que atribuimos e recebemos os dados do banco de 
+	 * dados com total integridade. Os atributos dessa classe são os mesmos
+	 * atributos definidos na hora da criação da tabela no banco de dados
+	 */
+	
 	private long id;
 	private String nome; 
 	private String cpf;

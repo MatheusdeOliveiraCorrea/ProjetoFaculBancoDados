@@ -12,8 +12,7 @@ public class Apresentacao {
 	 * dados. Esses dados são disponibilizados pelo método listarPacientes() da
 	 * classe PacienteDAO. Em seguida é usado um for each para percorrer todos os
 	 * elementos da lista e imprimir no console
-	 */
-	
+	 */	
 	public void listarTodosPacientes() {
 
 		PacienteDAO dao = new PacienteDAO();
@@ -39,12 +38,40 @@ public class Apresentacao {
 	 */
 	
 	public void listarTodosPacientesVacinados() {
-		
-		
+
+		PacienteDAO dao = new PacienteDAO();
+		LinkedList<Paciente> pacienteList = new LinkedList<Paciente>();
+
+		pacienteList = (LinkedList<Paciente>) dao.listarVacinados();
+
+		System.out.println("\nLista dos que foram vacinados: \n ");
+		for (Paciente paciente : pacienteList) {
+
+			System.out.println(paciente);
+			System.out.println("-------------------------------------" + "----------------------------------");
+		}
 		
 	}
 	
+	/*
+	 * Buscar pelo cpf
+	 */
 	
+	public void buscar() {
+		
+		PacienteDAO dao = new PacienteDAO();
+		dao.consultar("cpf"); //inserir cpf válido
+		
+	}
+	
+	public void update() {
+		
+		PacienteDAO dao = new PacienteDAO();
+		dao.updateUf("SC", "74125898547");  
+		dao.updateNome("nome", "cpf");
+		dao.updateVacinado(false, "cpf");
+		
+	}
 	
 	
 	

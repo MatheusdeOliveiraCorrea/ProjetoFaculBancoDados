@@ -51,10 +51,11 @@ public class test {
 
 	}
 
+	
 	public void testConsultar() {
 
 		PacienteDAO dao = new PacienteDAO();
-		dao.consultar("cpf");
+		dao.consultar("cpf"); //inserir cpf válido
 
 	}
 
@@ -62,7 +63,8 @@ public class test {
 	public void testUpdate() {
 		PacienteDAO dao = new PacienteDAO();
 
-		dao.updateUf("SC", "74125898547");
+		dao.updateUf("SC", "74125898547");  
+		
 		
 	}
 

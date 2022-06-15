@@ -11,16 +11,30 @@ import bancoDados.Conexao;
 import model.Paciente;
 
 public class PacienteDAO {
+	
+	/*
+	 * Para cada classe de modelo, temos uma classe para o acesso ao banco
+	 * de dados, ou seja, a classe modelo salva os dados vindo do banco de 
+	 * dados, enquanto "PacienteDAO" comanda diretamente o BD a executar as 
+	 * instruções SQL
+	 */
 
+	
+	
 	private Connection conexaoDAO;
 
-	public PacienteDAO() {
+	//isso é um construtor
+	
+	public PacienteDAO() { //sempre que essa classe for instanciada,
+		//conecta-se com o banco de dados
 
 		conexaoDAO = Conexao.getConnection();
 
 	}
 
 	
+	
+	//método para listar os pacientes
 	public LinkedList<Paciente> listarPacientes() {
 
 		LinkedList<Paciente> list = new LinkedList<Paciente>();
@@ -53,6 +67,8 @@ public class PacienteDAO {
 		return list;
 	}
 
+	
+	//método para listar somente os vacinados
 	public List<Paciente> listarVacinados() {
 
 		List<Paciente> pacientes_vacinados = new LinkedList<Paciente>();
@@ -92,6 +108,7 @@ public class PacienteDAO {
 	}
 
 
+	//método para buscar algum paciente usando seu CPF
 	public void consultar(String cpf) {
 
 		int sinalizador = 0;
@@ -117,6 +134,7 @@ public class PacienteDAO {
 
 	}
 
+	//método para mudar nome de algum paciente no banco de dados
 	public void updateNome(String novo_valor, String cpf) {
 
 		try {
@@ -139,6 +157,7 @@ public class PacienteDAO {
 
 	}
 
+	//método para mudar o Estado de algum paciente no banco de dados
 	public void updateUf(String novo_valor, String cpf) {
 
 		try {
@@ -162,6 +181,7 @@ public class PacienteDAO {
 	}
 	
 	
+	//método para mudar o status de vacinação de algum paciente no banco de dados
 	public void updateVacinado(boolean vacinado, String cpf) {
 
 		try {
@@ -184,7 +204,7 @@ public class PacienteDAO {
 
 	}
 	
-	
+	//método para adcionar um novo paciente no banco de dados
 	public void salvar(String nome, String cpf, boolean vacinado, String uf) {
 
 		try {
